@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Facebook 每日发帖看板 · 2026-11-12</title>
+  <style>
+
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --text: #152033;
+      --muted: #667085;
+      --line: #d8dee8;
+      --blue: #1f5eff;
+      --green: #15803d;
+      --amber: #b7791f;
+      --red: #b42318;
+      --ink: #0f172a;
+      --soft-blue: #edf3ff;
+      --soft-green: #eaf7ef;
+      --soft-amber: #fff7e6;
+      --soft-red: #fff1f0;
+      --shadow: 0 12px 30px rgba(15, 23, 42, .07);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    .shell { max-width: 1480px; margin: 0 auto; padding: 28px 28px 48px; }
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 20px;
+    }
+    h1 { margin: 0; font-size: 28px; line-height: 1.15; letter-spacing: 0; }
+    .subtitle { margin-top: 8px; color: var(--muted); }
+    .nav-links { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .controls { display: flex; gap: 10px; align-items: center; justify-content: flex-end; flex-wrap: wrap; }
+    select, button, .btn {
+      height: 36px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      border-radius: 7px;
+      padding: 0 12px;
+      font: inherit;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    button.active, .btn.active { border-color: var(--blue); color: var(--blue); background: var(--soft-blue); font-weight: 650; }
+    .grid { display: grid; gap: 16px; }
+    .kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 16px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+    .kpi { padding: 16px; min-height: 112px; }
+    .label { color: var(--muted); font-size: 13px; }
+    .value { margin-top: 10px; font-size: 30px; line-height: 1; font-weight: 760; color: var(--ink); }
+    .value.risk { color: var(--red); }
+    .delta { margin-top: 10px; font-size: 13px; color: var(--muted); }
+    .panel { padding: 18px; }
+    .panel-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 12px; flex-wrap: wrap; }
+    h2 { margin: 0; font-size: 18px; letter-spacing: 0; }
+    .hint { color: var(--muted); font-size: 12px; }
+    .pill { padding: 5px 9px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--text); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .pill.on { border-color: var(--blue); color: var(--blue); background: var(--soft-blue); font-weight: 650; }
+    .pill.risk, .chip.risk {
+      background: var(--soft-red);
+      color: var(--red);
+      border-color: #f5c2c0;
+    }
+    .live { display: inline-block; padding: 2px 8px; border-radius: 999px; background: var(--soft-amber); color: var(--amber); font-size: 12px; font-weight: 650; margin-left: 8px; vertical-align: middle; }
+    .meta-strip { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 18px; color: var(--muted); }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; background: #fff; font-size: 13px; }
+    .silent-box { padding: 16px 18px; margin-bottom: 16px; }
+    .silent-box h2 { margin-bottom: 10px; }
+    .posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; align-items: start; }
+    .post-card { overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+    .post-head { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; padding: 12px 16px 10px; }
+    .post-images { position: relative; background: #eef2f7; display: grid; gap: 3px; }
+    .post-images.multi-2 { grid-template-columns: 1fr 1fr; }
+    .post-images.multi-3, .post-images.multi-n { grid-template-columns: 1fr 1fr; }
+    .post-images img { width: 100%; height: auto; display: block; background: #eef2f7; }
+    .post-images.multi-2 img, .post-images.multi-3 img, .post-images.multi-n img { height: 220px; object-fit: cover; }
+    .no-img { min-height: 72px; display: flex; align-items: center; justify-content: center; color: var(--muted); background: #f3f5f8; font-size: 13px; }
+    .video-badge {
+      position: absolute; left: 10px; top: 10px; z-index: 1;
+      background: rgba(15,23,42,.82); color: #fff; padding: 3px 8px;
+      border-radius: 999px; font-size: 12px; font-weight: 650; letter-spacing: .02em;
+    }
+    .post-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .post-top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
+    .page-name { font-weight: 650; color: var(--ink); }
+    .post-time { color: var(--muted); font-size: 13px; white-space: nowrap; }
+    .type-tag { display: inline-block; margin-left: 6px; padding: 1px 6px; border-radius: 999px; background: var(--soft-blue); color: var(--blue); font-size: 11px; font-weight: 650; }
+    .caption { white-space: pre-wrap; word-break: break-word; color: var(--text); line-height: 1.55; }
+    .caption.collapsed { max-height: 6.2em; overflow: hidden; position: relative; }
+    .caption.collapsed::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.8em;
+      background: linear-gradient(transparent, #fff);
+    }
+    .toggle { border: 0; background: none; color: var(--blue); padding: 0; height: auto; cursor: pointer; font: inherit; align-self: flex-start; }
+    .stats { display: flex; gap: 14px; color: var(--muted); font-size: 13px; flex-wrap: wrap; }
+    .stats b { color: var(--ink); font-weight: 650; }
+    .open-link { color: var(--blue); text-decoration: none; font-size: 13px; }
+    .open-link:hover { text-decoration: underline; }
+    .group-title { margin: 8px 0 4px; font-size: 16px; color: var(--ink); }
+    .footer { margin-top: 20px; color: var(--muted); font-size: 12px; }
+    a.back { color: var(--blue); text-decoration: none; font-weight: 650; }
+    a.back:hover { text-decoration: underline; }
+    @media (max-width: 1100px) {
+      header { grid-template-columns: 1fr; }
+      .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .controls { justify-content: flex-start; }
+    }
+    @media (max-width: 640px) {
+      .shell { padding: 18px 14px 32px; }
+      .kpis { grid-template-columns: 1fr; }
+      .value { font-size: 26px; }
+      .posts-grid { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div>
+        <h1>Facebook 每日发帖看板<span class="live">进行中</span></h1>
+        <div class="subtitle">查看 27 个 Carlcare Service 主页在 2026-11-12（北京时间）发布的帖子与配图。</div>
+        <div class="nav-links">
+          <a class="back" href="../index.html">每日数据看板</a>
+        </div>
+      </div>
+      <div class="controls">
+        <span class="label">日期</span>
+        <a class="pill" href="2026-11-10.html">2026-11-10</a><a class="pill" href="2026-11-11.html">2026-11-11</a><a class="pill on" href="2026-11-12.html">2026-11-12 进行中</a><a class="pill" href="../posts.html">最新</a>
+      </div>
+    </header>
+
+    <div class="meta-strip">
+      <span class="pill">数据日期 2026-11-12</span>
+      <span class="pill">北京时间 UTC+8</span>
+      <span class="pill">共 27 个主页</span>
+    </div>
+
+    <section class="grid kpis">
+      <div class="card kpi">
+        <div class="label">发帖总数</div>
+        <div class="value">1</div>
+        <div class="delta">当天所有主页合计</div>
+      </div>
+      <div class="card kpi">
+        <div class="label">已发帖主页</div>
+        <div class="value">1 / 27</div>
+        <div class="delta">至少发布一条帖子</div>
+      </div>
+      <div class="card kpi">
+        <div class="label">未发帖主页</div>
+        <div class="value risk">26</div>
+        <div class="delta">当天没有任何帖子</div>
+      </div>
+      <div class="card kpi">
+        <div class="label">总互动</div>
+        <div class="value">1</div>
+        <div class="delta">赞 + 评论 + 分享</div>
+      </div>
+    </section>
+    
+    <section class="card silent-box">
+      <div class="panel-head">
+        <h2>未发帖主页（26）</h2>
+        <span class="hint">这些主页在当天没有发布任何帖子</span>
+      </div>
+      <div class="chip-row"><span class="chip risk">Carlcare Service (Default)</span><span class="chip risk">Carlcare Service (IN)</span><span class="chip risk">Carlcare Service (CI, GN, SN)</span><span class="chip risk">Carlcare Service (EG)</span><span class="chip risk">Carlcare Service BD (BD)</span><span class="chip risk">Carlcare Service PK (PK)</span><span class="chip risk">Carlcare Service (KE)</span><span class="chip risk">Carlcare Service (GH)</span><span class="chip risk">Carlcare Service ET (ET)</span><span class="chip risk">Carlcare Service Morocco (MA)</span><span class="chip risk">Carlcare Service (UG)</span><span class="chip risk">Carlcare Service (PH)</span><span class="chip risk">Carlcare Service TZ (TZ)</span><span class="chip risk">Carlcare Service ID (ID)</span><span class="chip risk">Carlcare Service CM (CM)</span><span class="chip risk">Carlcare Service (ZM)</span><span class="chip risk">Carlcare Service TH (TH)</span><span class="chip risk">Carlcare Service NG (NG)</span><span class="chip risk">Carlcare Service DZ (DZ)</span><span class="chip risk">Carlcare Service (RW)</span><span class="chip risk">Carlcare Service (MM)</span><span class="chip risk">Carlcare Service (MY)</span><span class="chip risk">Carlcare Service Bolivia</span><span class="chip risk">Carlcare Service Tunisia (TN)</span><span class="chip risk">Carlcare Service CO</span><span class="chip risk">Carlcare Service Zimbabwe</span></div>
+    </section>
+
+    <section class="card panel">
+      <div class="panel-head">
+        <h2>当天帖子</h2>
+        <div class="controls">
+          <button type="button" id="sortInteract" class="active">按互动排序</button>
+          <button type="button" id="sortGroup">按主页分组</button>
+          <span class="hint">点击卡片底部链接可打开 Facebook 原帖</span>
+        </div>
+      </div>
+      <div id="feed" class="posts-grid"></div>
+    </section>
+
+    <div class="footer">数据来自 Meta Graph API，按北京时间划分自然日。配图已转存到本站，避免 Facebook 原图链接过期。生成时间：2026-11-12 08:59 CST</div>
+  </div>
+  <script>
+    const DATA = {"day": "2026-11-12", "imgBase": "img/2026-11-12/", "posts": [{"id": "267888669748614_122242926866283811", "time": "08:32", "created_time": "2026-11-12 08:32", "type": "added_photos", "is_video": false, "msg": "📱 ¡Tu celular reparado y listo para volver a acompañarte en 3 días laborables o menos!\n\nNo dejes que un celular dañado detenga tu día. En nuestros centros de servicio técnico realizamos la reparación de celulares con atención especializada para que vuelvas a disfrutar de tu dispositivo lo antes posible.\n\n📍 Visítanos en nuestros locales de Guayaquil y Quito. 🔧 Recibe una revisión GRATIS para conocer el estado de tu equipo.", "url": "https://www.facebook.com/122242851860283811/posts/122242926866283811", "reactions": 1, "comments": 0, "shares": 0, "attachments": [{"type": "photo", "title": ""}], "local_images": ["267888669748614_122242926866283811_1.jpg"], "image_count": 1, "country": "Ecuador", "page_name": "Carlcare Service (EC)", "interactions": 1}]};
+    const CAPTION_LIMIT = 160;
+    const feed = document.getElementById('feed');
+    let mode = 'interact';
+
+    document.getElementById('sortInteract').addEventListener('click', () => setMode('interact'));
+    document.getElementById('sortGroup').addEventListener('click', () => setMode('group'));
+
+    function setMode(m) {
+      mode = m;
+      document.getElementById('sortInteract').classList.toggle('active', m === 'interact');
+      document.getElementById('sortGroup').classList.toggle('active', m === 'group');
+      render();
+    }
+
+    function esc(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function typeLabel(t, isVideo) {
+      if (isVideo) return '视频';
+      const map = {added_photos:'图片', added_video:'视频', mobile_status_update:'动态', shared_story:'分享', created_event:'活动'};
+      return map[t] || t || '帖子';
+    }
+
+    function captionBlock(msg) {
+      const text = msg || '（无文字）';
+      const long = text.length > CAPTION_LIMIT || (text.match(/\n/g) || []).length >= 4;
+      const cls = long ? 'caption collapsed' : 'caption';
+      const btn = long ? '<button type="button" class="toggle" data-toggle="1">展开全文</button>' : '';
+      return `<div class="${cls}">${esc(text)}</div>${btn}`;
+    }
+
+    function imageBlock(p) {
+      const imgs = p.local_images || [];
+      const badge = p.is_video ? '<span class="video-badge">视频</span>' : '';
+      if (!imgs.length) {
+        return `<div class="post-images">${badge}<div class="no-img">${p.is_video ? '视频封面未能加载' : (p.image_count ? '图片未能加载' : '无配图')}</div></div>`;
+      }
+      const n = imgs.length;
+      const layout = n === 1 ? 'single' : (n === 2 ? 'multi-2' : (n === 3 ? 'multi-3' : 'multi-n'));
+      const tags = imgs.map(fn => `<img src="${esc(DATA.imgBase + fn)}" alt="" loading="lazy">`).join('');
+      return `<div class="post-images ${layout}">${badge}${tags}</div>`;
+    }
+
+    function card(p) {
+      const inter = (p.reactions||0) + (p.comments||0) + (p.shares||0);
+      const link = p.url ? `<a class="open-link" href="${esc(p.url)}" target="_blank" rel="noopener">打开原帖</a>` : '';
+      return `<article class="card post-card">
+        <div class="post-head">
+          <div class="page-name">${esc(p.page_name)}<span class="type-tag">${esc(typeLabel(p.type, p.is_video))}</span></div>
+          <div class="post-time">${esc(p.time)}</div>
+        </div>
+        ${imageBlock(p)}
+        <div class="post-body">
+          ${captionBlock(p.msg)}
+          <div class="stats">
+            <span>赞 <b>${p.reactions||0}</b></span>
+            <span>评论 <b>${p.comments||0}</b></span>
+            <span>分享 <b>${p.shares||0}</b></span>
+            <span>互动 <b>${inter}</b></span>
+            ${link}
+          </div>
+        </div>
+      </article>`;
+    }
+
+    function render() {
+      const posts = DATA.posts.slice();
+      if (mode === 'interact') {
+        posts.sort((a,b) => (b.interactions - a.interactions) || String(a.time).localeCompare(String(b.time)));
+        feed.className = 'posts-grid';
+        feed.innerHTML = posts.length ? posts.map(card).join('') : '<div class="hint">这一天没有任何帖子。</div>';
+      } else {
+        const groups = [];
+        const map = new Map();
+        for (const p of posts) {
+          if (!map.has(p.country)) { map.set(p.country, []); groups.push(p.country); }
+          map.get(p.country).push(p);
+        }
+        feed.className = '';
+        feed.innerHTML = groups.map(c => {
+          const list = map.get(c);
+          const name = list[0].page_name;
+          return `<h3 class="group-title">${esc(name)}（${list.length}）</h3><div class="posts-grid">${list.map(card).join('')}</div>`;
+        }).join('') || '<div class="hint">这一天没有任何帖子。</div>';
+      }
+      feed.querySelectorAll('[data-toggle]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const cap = btn.previousElementSibling;
+          const open = cap.classList.toggle('collapsed') === false;
+          // classList.toggle returns new state of the class; we want the opposite wording
+          const collapsed = cap.classList.contains('collapsed');
+          btn.textContent = collapsed ? '展开全文' : '收起';
+        });
+      });
+    }
+    render();
+  </script>
+</body>
+</html>
