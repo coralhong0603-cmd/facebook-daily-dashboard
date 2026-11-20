@@ -1,42 +1,49 @@
 {
-  "fetched_at_beijing": "2026-11-19 11:30:39",
+  "fetched_at_beijing": "2026-11-20 14:31:30",
   "scan_since": "2026-09-01",
-  "scan_until": "2026-11-19 11:30:39",
+  "scan_until": "2026-11-20 14:31:30",
+  "previous_snapshot": {
+    "confirmed": 34,
+    "pages": 15,
+    "views": 20580,
+    "engagement": 1309,
+    "until": "2026-11-19 11:30:39"
+  },
   "pages_scanned": 27,
-  "posts_scanned": 1094,
+  "posts_scanned": 1121,
   "fetched_counts_by_country": {
-    "Global": 37,
-    "India": 105,
+    "Global": 38,
+    "India": 107,
     "Cote d'Ivoire": 1,
-    "Egypt": 45,
-    "Bangladesh": 43,
-    "Pakistan": 61,
-    "Kenya": 34,
-    "Ghana": 60,
-    "Ethiopia": 47,
+    "Egypt": 46,
+    "Bangladesh": 44,
+    "Pakistan": 63,
+    "Kenya": 35,
+    "Ghana": 61,
+    "Ethiopia": 49,
     "Morocco": 2,
-    "Uganda": 74,
-    "Philippines": 119,
-    "Tanzania": 42,
-    "Indonesia": 101,
+    "Uganda": 75,
+    "Philippines": 123,
+    "Tanzania": 43,
+    "Indonesia": 102,
     "Cameroon": 51,
     "Zambia": 21,
     "Thailand": 1,
-    "Nigeria": 56,
+    "Nigeria": 57,
     "Algeria": 8,
-    "Rwanda": 22,
-    "Myanmar": 38,
-    "Ecuador": 39,
+    "Rwanda": 23,
+    "Myanmar": 40,
+    "Ecuador": 40,
     "Malaysia": 0,
-    "Bolivia": 32,
+    "Bolivia": 34,
     "Tunisia": 0,
-    "Colombia": 26,
-    "Zimbabwe": 29
+    "Colombia": 27,
+    "Zimbabwe": 30
   },
   "page_errors": {},
   "accounts_error": null,
-  "confirmed_posts": 34,
-  "pending_posts": 2,
+  "confirmed_posts": 49,
+  "pending_posts": 3,
   "participating_countries": [
     "Bangladesh",
     "Bolivia",
@@ -51,6 +58,7 @@
     "Myanmar",
     "Nigeria",
     "Pakistan",
+    "Philippines",
     "Uganda",
     "Zimbabwe"
   ],
@@ -68,6 +76,7 @@
     "缅甸",
     "尼日利亚",
     "巴基斯坦",
+    "菲律宾",
     "乌干达",
     "津巴布韦"
   ],
@@ -76,7 +85,6 @@
     "Egypt",
     "Ethiopia",
     "Morocco",
-    "Philippines",
     "Tanzania",
     "Zambia",
     "Thailand",
@@ -90,7 +98,6 @@
     "埃及",
     "埃塞俄比亚",
     "摩洛哥",
-    "菲律宾",
     "坦桑尼亚",
     "赞比亚",
     "泰国",
@@ -99,74 +106,100 @@
     "马来西亚",
     "突尼斯"
   ],
-  "views_sum_lifetime": 20580,
-  "views_available_count": 34,
-  "views_coverage": "34/34",
-  "engagement_sum": 1309,
+  "views_sum_lifetime": 33491,
+  "views_available_count": 49,
+  "views_coverage": "49/49",
+  "views_missing_count": 0,
+  "engagement_sum": 2118,
+  "delta_vs_previous": {
+    "confirmed_posts": 15,
+    "pages": 1,
+    "views_sum_lifetime": 12911,
+    "engagement_sum": 809,
+    "new_post_ids_count": 15,
+    "removed_post_ids_count": 0,
+    "new_posts_by_country_zh": {
+      "印度": 2,
+      "缅甸": 1,
+      "乌干达": 1,
+      "菲律宾": 1,
+      "尼日利亚": 1,
+      "肯尼亚": 1,
+      "全球": 1,
+      "津巴布韦": 1,
+      "加纳": 1,
+      "巴基斯坦": 1,
+      "厄瓜多尔": 1,
+      "哥伦比亚": 1,
+      "玻利维亚": 1,
+      "印尼": 1
+    }
+  },
   "by_country_counts": {
-    "印尼": 10,
-    "全球": 2,
-    "尼日利亚": 2,
-    "乌干达": 2,
-    "肯尼亚": 2,
-    "巴基斯坦": 2,
-    "津巴布韦": 1,
+    "印尼": 11,
+    "全球": 3,
+    "尼日利亚": 3,
+    "乌干达": 3,
+    "肯尼亚": 3,
+    "巴基斯坦": 3,
+    "津巴布韦": 2,
     "孟加拉": 1,
-    "印度": 3,
-    "玻利维亚": 2,
-    "厄瓜多尔": 2,
-    "哥伦比亚": 2,
-    "缅甸": 1,
-    "加纳": 1,
-    "喀麦隆": 1
+    "印度": 5,
+    "玻利维亚": 3,
+    "厄瓜多尔": 3,
+    "哥伦比亚": 3,
+    "缅甸": 2,
+    "加纳": 2,
+    "喀麦隆": 1,
+    "菲律宾": 1
   },
   "by_category_counts": {
     "预热": 1,
-    "关爱技巧": 9,
-    "Unlock13": 24
+    "关爱技巧": 10,
+    "Unlock13": 38
   },
   "earliest_confirmed_beijing": "2026-11-10 11:00",
-  "latest_confirmed_beijing": "2026-11-19 11:00",
+  "latest_confirmed_beijing": "2026-11-20 12:30",
   "top_by_engagement": [
     {
       "id": "2012503782306218_1584040323754886",
       "country_zh": "印度",
       "summary_zh": "印度｜Unlock 13 第2天：场景/故障配对挑战。",
-      "engagement": 168,
-      "views": 1042,
+      "engagement": 209,
+      "views": 1565,
       "url": "https://www.facebook.com/1575804757911776/posts/1584040323754886"
     },
     {
       "id": "2012503782306218_1582997383859180",
       "country_zh": "印度",
       "summary_zh": "印度｜Unlock 13：找隐藏数字「13」互动挑战。",
-      "engagement": 148,
-      "views": 1466,
+      "engagement": 176,
+      "views": 1669,
       "url": "https://www.facebook.com/1575804757911776/posts/1582997383859180"
+    },
+    {
+      "id": "2012503782306218_1584735633685355",
+      "country_zh": "印度",
+      "summary_zh": "印度｜Unlock 13 第3天：公布前日答案并开启新挑战。",
+      "engagement": 168,
+      "views": 1074,
+      "url": "https://www.facebook.com/1575804757911776/posts/1584735633685355"
     },
     {
       "id": "1094142560678778_1478118721085706",
       "country_zh": "孟加拉",
       "summary_zh": "孟加拉｜Unlock 13：周年互动挑战。",
-      "engagement": 145,
-      "views": 2283,
+      "engagement": 152,
+      "views": 2600,
       "url": "https://www.facebook.com/1471820801715498/posts/1478118721085706"
     },
     {
       "id": "1377842085588075_1453677153611263",
       "country_zh": "尼日利亚",
       "summary_zh": "尼日利亚｜Unlock 13：找隐藏数字「13」互动挑战。",
-      "engagement": 112,
-      "views": 1758,
+      "engagement": 117,
+      "views": 1854,
       "url": "https://www.facebook.com/1447487657563546/posts/1453677153611263"
-    },
-    {
-      "id": "1677888775851202_1212946301388719",
-      "country_zh": "乌干达",
-      "summary_zh": "乌干达｜Unlock 13 第1天：找隐藏数字「13」互动挑战。",
-      "engagement": 95,
-      "views": 1313,
-      "url": "https://www.facebook.com/1205904438759572/posts/1212946301388719"
     }
   ],
   "top_by_views": [
@@ -174,62 +207,196 @@
       "id": "1094142560678778_1478118721085706",
       "country_zh": "孟加拉",
       "summary_zh": "孟加拉｜Unlock 13：周年互动挑战。",
-      "engagement": 145,
-      "views": 2283,
+      "engagement": 152,
+      "views": 2600,
       "url": "https://www.facebook.com/1471820801715498/posts/1478118721085706"
     },
     {
       "id": "1545386218866099_1596926479136100",
       "country_zh": "肯尼亚",
       "summary_zh": "肯尼亚｜Unlock 13：找隐藏数字「13」互动挑战。",
-      "engagement": 81,
-      "views": 1853,
+      "engagement": 80,
+      "views": 1980,
       "url": "https://www.facebook.com/1589959693166112/posts/1596926479136100"
-    },
-    {
-      "id": "1377842085588075_1453677153611263",
-      "country_zh": "尼日利亚",
-      "summary_zh": "尼日利亚｜Unlock 13：找隐藏数字「13」互动挑战。",
-      "engagement": 112,
-      "views": 1758,
-      "url": "https://www.facebook.com/1447487657563546/posts/1453677153611263"
     },
     {
       "id": "315435088526192_1168060485567299",
       "country_zh": "全球",
       "summary_zh": "全球｜Unlock 13 第1天：找隐藏数字「13」互动挑战。",
       "engagement": 83,
-      "views": 1716,
+      "views": 1878,
       "url": "https://www.facebook.com/1161921822847832/posts/1168060485567299"
+    },
+    {
+      "id": "1377842085588075_1453677153611263",
+      "country_zh": "尼日利亚",
+      "summary_zh": "尼日利亚｜Unlock 13：找隐藏数字「13」互动挑战。",
+      "engagement": 117,
+      "views": 1854,
+      "url": "https://www.facebook.com/1447487657563546/posts/1453677153611263"
     },
     {
       "id": "1677888775851202_1213898237960192",
       "country_zh": "乌干达",
       "summary_zh": "乌干达｜Unlock 13 第2天：场景/故障配对挑战。",
-      "engagement": 92,
-      "views": 1483,
+      "engagement": 113,
+      "views": 1808,
       "url": "https://www.facebook.com/1205904438759572/posts/1213898237960192"
     }
   ],
   "shared_posts_in_confirmed": 0,
-  "notes": [
-    "扫描范围：2026-09-01 起至抓取时刻的全部公开帖（Graph API /posts 分页）。",
-    "确定相关帖 34 条，覆盖 15 个主页；待确认 2 条未计入汇总。",
-    "Views = post_media_view（lifetime 累计媒体浏览次数），不是去重触达/曝光；合计仅为各帖累计值相加。",
-    "Views 可用覆盖：34/34；不可用保留为「不可用/null」，不用 0 填补。",
-    "互动 = 反应 + 评论 + 分享。账号新增关注未归因到周年帖。",
-    "每主页每个 post id 只计一次；分享帖若被识别会单独标注，仍按本页发布的 post id 计数。",
-    "视频帖若仅有标签/无配文且无法从文案确认，放入待确认或不纳入；不声称已观看视频内容。",
-    "不包含任何私信（DM）数据。",
-    "扫描自 2026-09-01 起；最早确定相关帖为 2026-11-10（印尼 13 Days of Care 预热），距扫描起点较远，无需再向前扩展。",
-    "厄瓜多尔 11/19 前后「周四免人工费」促销帖文案未提及 13 周年，未纳入确定相关汇总。",
-    "孟加拉足球/板球预测送礼帖含地址「গ-১৩৪」曾被误匹配，已排除。",
-    "印度 GTA VI 图集等非周年内容未纳入。",
-    "埃塞俄比亚 2026-11-17 短配文图片帖：人工已检查图片，为普通品牌手机保养图，未见13周年依据，已排除（不计入汇总、不列入待确认）。",
-    "坦桑尼亚 2026-11-17、2026-11-18 两条短配文视频帖：人工已检查视频封面，均未见13周年依据；视频本身尚未核查，仍保留在待确认，不计入汇总。"
+  "new_confirmed_posts": [
+    {
+      "id": "2012503782306218_1584735633685355",
+      "country_zh": "印度",
+      "created_time_beijing": "2026-11-19 12:30",
+      "category_detail": "Unlock 13 Day 3",
+      "summary_zh": "印度｜Unlock 13 第3天：公布前日答案并开启新挑战。",
+      "views": 1074,
+      "engagement": 168,
+      "url": "https://www.facebook.com/1575804757911776/posts/1584735633685355"
+    },
+    {
+      "id": "176984945505335_122275819274153106",
+      "country_zh": "缅甸",
+      "created_time_beijing": "2026-11-19 12:35",
+      "category_detail": "Unlock 13 Day 2",
+      "summary_zh": "缅甸｜Unlock 13 第2天：场景/故障配对挑战。",
+      "views": 106,
+      "engagement": 0,
+      "url": "https://www.facebook.com/122274759230153106/posts/122275819274153106"
+    },
+    {
+      "id": "1677888775851202_1214788547871161",
+      "country_zh": "乌干达",
+      "created_time_beijing": "2026-11-19 14:50",
+      "category_detail": "Unlock 13 Day 3",
+      "summary_zh": "乌干达｜Unlock 13 第3天：周年互动挑战。",
+      "views": 1568,
+      "engagement": 108,
+      "url": "https://www.facebook.com/1205904438759572/posts/1214788547871161"
+    },
+    {
+      "id": "105632181340247_1729731019159177",
+      "country_zh": "菲律宾",
+      "created_time_beijing": "2026-11-19 14:58",
+      "category_detail": "Unlock 13 Day 1",
+      "summary_zh": "菲律宾｜Unlock 13 第1天：找隐藏数字「13」互动挑战。",
+      "views": 825,
+      "engagement": 30,
+      "url": "https://www.facebook.com/1719642150168064/posts/1729731019159177"
+    },
+    {
+      "id": "1377842085588075_1455589543420024",
+      "country_zh": "尼日利亚",
+      "created_time_beijing": "2026-11-19 15:33",
+      "category_detail": "Unlock 13 Day 3",
+      "summary_zh": "尼日利亚｜Unlock 13 第3天：公布前日答案并开启新挑战。",
+      "views": 828,
+      "engagement": 68,
+      "url": "https://www.facebook.com/1447487657563546/posts/1455589543420024"
+    },
+    {
+      "id": "1545386218866099_1598865678942180",
+      "country_zh": "肯尼亚",
+      "created_time_beijing": "2026-11-19 15:49",
+      "category_detail": "Unlock 13 Day 3",
+      "summary_zh": "肯尼亚｜Unlock 13 第3天：周年互动挑战。",
+      "views": 1274,
+      "engagement": 71,
+      "url": "https://www.facebook.com/1589959693166112/posts/1598865678942180"
+    },
+    {
+      "id": "315435088526192_1169971515376196",
+      "country_zh": "全球",
+      "created_time_beijing": "2026-11-19 15:58",
+      "category_detail": "Unlock 13 Day 3",
+      "summary_zh": "全球｜Unlock 13 第3天：场景/故障配对挑战。",
+      "views": 1030,
+      "engagement": 51,
+      "url": "https://www.facebook.com/1161921822847832/posts/1169971515376196"
+    },
+    {
+      "id": "333935173129351_122236750256303466",
+      "country_zh": "津巴布韦",
+      "created_time_beijing": "2026-11-19 16:00",
+      "category_detail": "Unlock 13 Day 2",
+      "summary_zh": "津巴布韦｜Unlock 13 第2天：场景/故障配对挑战。",
+      "views": 236,
+      "engagement": 17,
+      "url": "https://www.facebook.com/122235852584303466/posts/122236750256303466"
+    },
+    {
+      "id": "1435106903216639_1569398345225378",
+      "country_zh": "加纳",
+      "created_time_beijing": "2026-11-19 18:00",
+      "category_detail": "Unlock 13 Day 2",
+      "summary_zh": "加纳｜Unlock 13 第2天：场景/故障配对挑战。",
+      "views": 365,
+      "engagement": 21,
+      "url": "https://www.facebook.com/1560172816147931/posts/1569398345225378"
+    },
+    {
+      "id": "1278473725499087_1568813421946569",
+      "country_zh": "巴基斯坦",
+      "created_time_beijing": "2026-11-19 18:14",
+      "category_detail": "Unlock 13",
+      "summary_zh": "巴基斯坦｜Unlock 13：找隐藏数字「13」互动挑战。",
+      "views": 455,
+      "engagement": 13,
+      "url": "https://www.facebook.com/1560031746158070/posts/1568813421946569"
+    },
+    {
+      "id": "267888669748614_122243774384283811",
+      "country_zh": "厄瓜多尔",
+      "created_time_beijing": "2026-11-20 01:45",
+      "category_detail": "Unlock 13 Day 3",
+      "summary_zh": "厄瓜多尔｜Unlock 13 第3天：公布前日答案并开启新挑战。",
+      "views": 107,
+      "engagement": 3,
+      "url": "https://www.facebook.com/122242851860283811/posts/122243774384283811"
+    },
+    {
+      "id": "228938917580846_1485862823649292",
+      "country_zh": "哥伦比亚",
+      "created_time_beijing": "2026-11-20 10:00",
+      "category_detail": "Unlock 13 Day 3",
+      "summary_zh": "哥伦比亚｜Unlock 13 第3天：公布前日答案并开启新挑战。",
+      "views": 9,
+      "engagement": 0,
+      "url": "https://www.facebook.com/1483960757172832/posts/1485862823649292"
+    },
+    {
+      "id": "373708282498334_122212107290463313",
+      "country_zh": "玻利维亚",
+      "created_time_beijing": "2026-11-20 10:00",
+      "category_detail": "Unlock 13 Day 3",
+      "summary_zh": "玻利维亚｜Unlock 13 第3天：公布前日答案并开启新挑战。",
+      "views": 87,
+      "engagement": 6,
+      "url": "https://www.facebook.com/122211242474463313/posts/122212107290463313"
+    },
+    {
+      "id": "113134406822567_1597481172398232",
+      "country_zh": "印尼",
+      "created_time_beijing": "2026-11-20 11:00",
+      "category_detail": "13 Days of Care Day 4 (+优惠语气)",
+      "summary_zh": "印尼｜13 Days of Care 第4天：Merawat perangkat juga bisa berarti lebih bijak dalam melihat penggunaan komponen. Melalui Greencycle, Carlcare menghadi…",
+      "views": 10,
+      "engagement": 0,
+      "url": "https://www.facebook.com/1588082993338050/posts/1597481172398232"
+    },
+    {
+      "id": "2012503782306218_1585836556908596",
+      "country_zh": "印度",
+      "created_time_beijing": "2026-11-20 12:30",
+      "category_detail": "Unlock 13 Day 4",
+      "summary_zh": "印度｜Unlock 13 第4天：场景/故障配对挑战。",
+      "views": 334,
+      "engagement": 66,
+      "url": "https://www.facebook.com/1575804757911776/posts/1585836556908596"
+    }
   ],
-  "notes_html": "扫描范围：2026-09-01 起至抓取时刻的全部公开帖（Graph API /posts 分页）。<br>确定相关帖 34 条，覆盖 15 个主页；待确认 2 条未计入汇总。<br>Views = post_media_view（lifetime 累计媒体浏览次数），不是去重触达/曝光；合计仅为各帖累计值相加。<br>Views 可用覆盖：34/34；不可用保留为「不可用/null」，不用 0 填补。<br>互动 = 反应 + 评论 + 分享。账号新增关注未归因到周年帖。<br>每主页每个 post id 只计一次；分享帖若被识别会单独标注，仍按本页发布的 post id 计数。<br>视频帖若仅有标签/无配文且无法从文案确认，放入待确认或不纳入；不声称已观看视频内容。<br>不包含任何私信（DM）数据。<br>扫描自 2026-09-01 起；最早确定相关帖为 2026-11-10（印尼 13 Days of Care 预热），距扫描起点较远，无需再向前扩展。<br>厄瓜多尔 11/19 前后「周四免人工费」促销帖文案未提及 13 周年，未纳入确定相关汇总。<br>孟加拉足球/板球预测送礼帖含地址「গ-১৩৪」曾被误匹配，已排除。<br>印度 GTA VI 图集等非周年内容未纳入。<br>埃塞俄比亚 2026-11-17 短配文图片帖：人工已检查图片，为普通品牌手机保养图，未见13周年依据，已排除（不计入汇总、不列入待确认）。<br>坦桑尼亚 2026-11-17、2026-11-18 两条短配文视频帖：人工已检查视频封面，均未见13周年依据；视频本身尚未核查，仍保留在待确认，不计入汇总。",
-  "methodology": "统计口径：确定相关帖按内容关键词/多语言周年话术/系列续帖规则识别；Views 使用 Meta Graph API v24 post_media_view lifetime；互动=reactions+comments+shares；筛选联动上方汇总与图表；导出 CSV 为当前筛选结果。",
   "excluded_after_review": [
     {
       "id": "1750325965184633_1565898362247449",
@@ -238,6 +405,37 @@
       "created_time_beijing": "2026-11-17 21:40",
       "reason": "埃塞俄比亚｜短配文图片帖。已检查图片：普通品牌手机保养图，未见13周年字样或依据，可排除，不计入汇总。",
       "url": "https://www.facebook.com/1558983712938914/posts/1565898362247449"
+    },
+    {
+      "id": "1750325965184633_1567553832081902",
+      "country": "Ethiopia",
+      "country_zh": "埃塞俄比亚",
+      "created_time_beijing": "2026-11-19 13:43",
+      "reason": "埃塞俄比亚｜短配文图片帖。已检查图片：手机防护保养提示图（How to protect your phone from damage），未见13周年依据，排除。",
+      "url": "https://www.facebook.com/1558983712938914/posts/1567553832081902"
+    },
+    {
+      "id": "1750325965184633_1567898712047414",
+      "country": "Ethiopia",
+      "country_zh": "埃塞俄比亚",
+      "created_time_beijing": "2026-11-19 21:31",
+      "reason": "埃塞俄比亚｜短配文图片帖。已检查图片：维修服务宣传图（技师修机），未见13周年依据，排除。",
+      "url": "https://www.facebook.com/1558983712938914/posts/1567898712047414"
     }
-  ]
+  ],
+  "notes": [
+    "扫描范围：2026-09-01 起至抓取时刻的全部公开帖（Graph API /posts 分页）。",
+    "本轮刷新时间（北京时间）：2026-11-20 14:31:30；相对上一快照 2026-11-19 11:30:39。",
+    "确定相关帖 49 条（上一轮 34，净增 15），覆盖 16 个主页（上一轮 15）。",
+    "新增确定相关 15 条（已剔除误收入的巴基斯坦 International Men's Day 帖）。",
+    "Views 可用覆盖：49/49；不可用保留为 null，不用 0 填补（API 真实返回 0 除外）。",
+    "Views = post_media_view（lifetime 累计媒体浏览次数），不是去重触达/曝光；合计仅为各帖累计值相加。",
+    "互动 = 反应 + 评论 + 分享。账号新增关注未归因到周年帖。",
+    "不包含任何私信（DM）数据。",
+    "埃塞俄比亚新增 2 条短配文图片：人工已检查，均为普通保养/维修宣传图，未见周年依据，已排除。",
+    "巴基斯坦 2026-11-19 12:51 International Men's Day 帖曾被续帖规则误收入，已移除。",
+    "坦桑尼亚短配文视频共 3 条待确认：其中 2 条沿用 11/19 封面人审，1 条新增已查封面（职场 POV 搞笑），视频本体均未核查，不凭标签纳入。"
+  ],
+  "notes_html": "扫描范围：2026-09-01 起至抓取时刻的全部公开帖（Graph API /posts 分页）。<br>本轮刷新时间（北京时间）：2026-11-20 14:31:30；相对上一快照 2026-11-19 11:30:39。<br>确定相关帖 49 条（上一轮 34，净增 15），覆盖 16 个主页（上一轮 15）。<br>新增确定相关 15 条（已剔除误收入的巴基斯坦 International Men&#x27;s Day 帖）。<br>Views 可用覆盖：49/49；不可用保留为 null，不用 0 填补（API 真实返回 0 除外）。<br>Views = post_media_view（lifetime 累计媒体浏览次数），不是去重触达/曝光；合计仅为各帖累计值相加。<br>互动 = 反应 + 评论 + 分享。账号新增关注未归因到周年帖。<br>不包含任何私信（DM）数据。<br>埃塞俄比亚新增 2 条短配文图片：人工已检查，均为普通保养/维修宣传图，未见周年依据，已排除。<br>巴基斯坦 2026-11-19 12:51 International Men&#x27;s Day 帖曾被续帖规则误收入，已移除。<br>坦桑尼亚短配文视频共 3 条待确认：其中 2 条沿用 11/19 封面人审，1 条新增已查封面（职场 POV 搞笑），视频本体均未核查，不凭标签纳入。",
+  "methodology": "统计口径：确定相关帖按多语言周年/Unlock 13/13 Days of Care 依据识别；Views 使用 Meta Graph API v24 post_media_view lifetime；互动=reactions+comments+shares；筛选联动上方汇总与图表；导出 CSV 为当前筛选结果。"
 }
