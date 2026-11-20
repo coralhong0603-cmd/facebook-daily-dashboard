@@ -1,5 +1,5 @@
 {
-  "fetched_at_beijing": "2026-11-19 11:30:39",
+  "fetched_at_beijing": "2026-11-20 14:31:30",
   "posts": [
     {
       "id": "1141800182547930_1553510166820885",
@@ -18,7 +18,7 @@
       "is_video": true,
       "is_shared_post": false,
       "images": [
-        "https://scontent-lga3-1.xx.fbcdn.net/v/t15.5256-10/906159566_2731627970607901_3500721701055223585_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=MGyZ9hZ7SzQQ7kNvwFzNnnY&_nc_oc=AdpAhCnqJltEnKIaIIXR9rTr9BMkyI5EdRua1YDkwM9zYUkply-vlkZDYK4RMUD83Yl6FmzNZIMWkKAqXsJbv6Xu&_nc_zt=23&_nc_ht=scontent-lga3-1.xx&edm=AKIiGfEEAAAA&_nc_gid=9-_WFApAJ8QlsQWA4ivkEw&_nc_tpa=Q5bMBQJRqkg9lUmyOYZvhnhhhjc-dcmT1ZNLUdYqvQujM4dGrRQyxbszYtrqwKY7Zot27-XwErUcz0i7Eg&oh=00_AQRxvpU6bVC5pFnE_oPikT3AOUR7vhafkOCjAkO3g5PRFQ&oe=6B044CA5"
+        "https://scontent-iad3-1.xx.fbcdn.net/v/t15.5256-10/906159566_2731627970607901_3500721701055223585_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=MGyZ9hZ7SzQQ7kNvwFRPrq0&_nc_oc=AdpOV2i07mUhfVBOTUhd9VZUqaAPDblaNaM_5JerDlNe5qc8SfhAfSuckPEU4adCfFtqG_eBTg6KpwusDSrAFgys&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AKIiGfEEAAAA&_nc_gid=JsU2r0ZCL0FZhQNcnNLnZA&_nc_tpa=Q5bMBQIFzNeBnoknLKwkJ5xgxEJ6vBTff74DqH-0P4A1ZdxPoJom2mTslw5Y7SZXa8YzN_33H6bCKZ84bw&oh=00_AQQLZpg7JA53INdfqM-hLVNJP3kO0sd7tJNgwCX4qyEq3w&oe=6B05D665"
       ],
       "local_images": [
         "1141800182547930_1553510166820885_1.jpg"
@@ -27,7 +27,7 @@
       "comments": 0,
       "shares": 0,
       "engagement": 2,
-      "views": 134,
+      "views": 142,
       "views_error": null,
       "category": "其他",
       "category_detail": "短配文视频帖（封面已查、视频未核查）",
@@ -35,12 +35,11 @@
       "confidence": "candidate",
       "evidence": [
         "short_caption_media_watchlist",
-        "human_cover_review_2026-11-19: 封面为人审：Carlcare vs local technician 拳击冠军题材图，未见13周年字样；视频本体未核查，故保留待确认。"
+        "human_cover_review_2026-11-19: boxing cover; no anniversary; video unchecked"
       ],
       "tags": [],
-      "fetched_at_beijing": "2026-11-19 11:30:47",
-      "review_status": "pending_cover_checked_video_unchecked",
-      "review_note": "封面为人审：Carlcare vs local technician 拳击冠军题材图，未见13周年字样；视频本体未核查，故保留待确认。"
+      "fetched_at_beijing": "2026-11-20 14:32:28",
+      "review_status": "pending_cover_checked_video_unchecked"
     },
     {
       "id": "1141800182547930_1554548180050417",
@@ -59,16 +58,16 @@
       "is_video": true,
       "is_shared_post": false,
       "images": [
-        "https://scontent-lga3-1.xx.fbcdn.net/v/t15.5256-10/896785612_1601554147965708_3276473632758096496_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=pdC6KpPPfqQQ7kNvwFf4ND_&_nc_oc=AdpVXxlvv3TNkB6HQNcSPHUl8OvBateVFRNodQDZPtab5VV2-yXzLW3ebyD8kHr9ITBIKlmdZnUUutQUwUXSPH6t&_nc_zt=23&_nc_ht=scontent-lga3-1.xx&edm=AKIiGfEEAAAA&_nc_gid=9-_WFApAJ8QlsQWA4ivkEw&_nc_tpa=Q5bMBQIHMlXh4-oL5er9tRbBZ9DU7maiaCuW9yPr7BPRSgJWHiHhYNMAdeBLJYG6W3DS4XRMrHSEGC1FEQ&oh=00_AQRPbrQHO50r7NYiLr8epPOp8zVsQgDUguCthT-WRXNMGA&oe=6B043CC4"
+        "https://scontent-iad3-2.xx.fbcdn.net/v/t15.5256-10/896785612_1601554147965708_3276473632758096496_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=_W5Ilg9dCAYQ7kNvwEuSja3&_nc_oc=AdrvQKB_oOkoDx1-_ZgQLEswi-5GfkH7Y8WFvKBY_HB2DUgsVngsEyTbWPrOghK8hgDPvW6Zt20P-4x9QVFy60Fb&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AKIiGfEEAAAA&_nc_gid=JsU2r0ZCL0FZhQNcnNLnZA&_nc_tpa=Q5bMBQK_LNhG4OgU12_cz8hUPVtzzM3KO_SAFc-FywXA4gluXylqQmp16HtuEdO1DKB2HKt3xpMzBVYb7g&oh=00_AQRM5MwtwnNf1zaZdgXKK9wqfP6TiNMZ6AWwawDnyf99Kw&oe=6B05C684"
       ],
       "local_images": [
         "1141800182547930_1554548180050417_1.jpg"
       ],
-      "reactions": 5,
+      "reactions": 6,
       "comments": 1,
       "shares": 0,
-      "engagement": 6,
-      "views": 451,
+      "engagement": 7,
+      "views": 627,
       "views_error": null,
       "category": "其他",
       "category_detail": "短配文视频帖（封面已查、视频未核查）",
@@ -76,12 +75,51 @@
       "confidence": "candidate",
       "evidence": [
         "short_caption_media_watchlist",
-        "human_cover_review_2026-11-19: 封面为人审：柜台员工 POV、被盗手机封锁笑话题材，未见13周年字样；视频本体未核查，故保留待确认。"
+        "human_cover_review_2026-11-19: POV stolen-phone joke cover; no anniversary; video unchecked"
       ],
       "tags": [],
-      "fetched_at_beijing": "2026-11-19 11:30:54",
-      "review_status": "pending_cover_checked_video_unchecked",
-      "review_note": "封面为人审：柜台员工 POV、被盗手机封锁笑话题材，未见13周年字样；视频本体未核查，故保留待确认。"
+      "fetched_at_beijing": "2026-11-20 14:32:28",
+      "review_status": "pending_cover_checked_video_unchecked"
+    },
+    {
+      "id": "1141800182547930_1555502909954944",
+      "country": "Tanzania",
+      "country_zh": "坦桑尼亚",
+      "page_id": "1141800182547930",
+      "created_time_beijing": "2026-11-19 17:14",
+      "created_date_beijing": "2026-11-19",
+      "created_time_utc": "2026-11-19T09:14:21+0000",
+      "message": "#carlcareservicetz #phonerepair #fypviralシ #facebookreel #FacebookPage",
+      "story": "",
+      "summary_zh": "坦桑尼亚｜短配文视频帖。已检查视频封面：职场 POV 搞笑滤镜（同事装忙），未见13周年依据；视频本身尚未核查，保留待确认。",
+      "url": "https://www.facebook.com/reel/2287420328879384/",
+      "status_type": "added_video",
+      "media_type": "video",
+      "is_video": true,
+      "is_shared_post": false,
+      "images": [
+        "https://scontent-iad3-2.xx.fbcdn.net/v/t15.5256-10/901242556_2438329280275839_542245035992999011_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=LdtpLpFj568Q7kNvwF-4hrr&_nc_oc=Adrk8eFrywy0T53B6vGAnLI2QCnNej_m6_hs1G4_3tPpCwpUi4CGoyGjz5ZtihVbfuIKB6GV5qF5ZM0d9F4fvGde&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AKIiGfEEAAAA&_nc_gid=JsU2r0ZCL0FZhQNcnNLnZA&_nc_tpa=Q5bMBQIhsCtNab_qZa7UXL5G9toed4CtGfquoK-KuUnzpD-IU_AK1SoRPOecVjcyxiRwIWkh585UZW2WgQ&oh=00_AQSVKEAs1-71HatUn3LwQB5L4tN1BG3SbzxcHJd4M77NwQ&oe=6B05B726"
+      ],
+      "local_images": [
+        "1141800182547930_1555502909954944_1.jpg"
+      ],
+      "reactions": 2,
+      "comments": 1,
+      "shares": 0,
+      "engagement": 3,
+      "views": 193,
+      "views_error": null,
+      "category": "其他",
+      "category_detail": "短配文视频帖（封面已查、视频未核查）",
+      "day_num": null,
+      "confidence": "candidate",
+      "evidence": [
+        "short_caption_video_new",
+        "human_cover_review_2026-11-20: POV busy-colleagues joke; no anniversary; video unchecked"
+      ],
+      "tags": [],
+      "fetched_at_beijing": "2026-11-20 14:32:29",
+      "review_status": "pending_cover_checked_video_unchecked"
     }
   ],
   "excluded": [
@@ -102,7 +140,7 @@
       "is_video": false,
       "is_shared_post": false,
       "images": [
-        "https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/911528984_1565898125580806_6717017435986224098_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=NnglIVz2pccQ7kNvwE3NbpJ&_nc_oc=AdolEUxsf35FHmc_2Jiyp50kcxn_v-UrRGlTUpxKYC45Paq2kZkYZSpn05UGsMpU7IUAF8T7gMHCEGTQAU7GaZym&_nc_zt=23&_nc_ht=scontent-lga3-1.xx&edm=AKIiGfEEAAAA&_nc_gid=4oQcmXrAIoya6pWHKjBoZA&_nc_tpa=Q5bMBQLzCbPPVrjzyd7Sd4Helcb-rUR6j8LKITHI8m_cZZwu2vjmBuBkIx3Bs5n1JhPDF_5rpvQXjvfs3A&oh=00_AQRdUTAi0CIZjs11cbiH7XG74ajFAbzQDt22oVRCehgtfA&oe=6B0459C6"
+        "https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-6/911528984_1565898125580806_6717017435986224098_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=NnglIVz2pccQ7kNvwHF2hrH&_nc_oc=AdoZjPp3G-TeKJJ_Lfs6ixjWX2aehclAAqcpWTcslPS1I-PP8xLPuwFPX75o696QfxkzQJrvrVYOzJMEbD0-_xFD&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&edm=AKIiGfEEAAAA&_nc_gid=Gq7xjueARHnVxOPMxmfUBQ&_nc_tpa=Q5bMBQLqb6ceO15zyNKPfNj_ajCKQh3bKihctBz6hwmnH6XzrIt9NTW4LiyZZE-nFJedIi5dwRIcGtX5DQ&oh=00_AQSsoKP6h37agZDYa3voT6V3E4ha0UjkaEb3QqhlTzecyA&oe=6B05AB46"
       ],
       "local_images": [
         "1750325965184633_1565898362247449_1.jpg"
@@ -111,7 +149,7 @@
       "comments": 0,
       "shares": 1,
       "engagement": 3,
-      "views": 214,
+      "views": 238,
       "views_error": null,
       "category": "其他",
       "category_detail": "已排除（图片人审）",
@@ -119,13 +157,92 @@
       "confidence": "excluded",
       "evidence": [
         "short_caption_media_watchlist",
-        "human_image_review_2026-11-19: ordinary phone-care brand image; no 13th-anniversary text/motif; excluded"
+        "human_image_review_2026-11-19: ordinary phone-care brand image; excluded"
       ],
       "tags": [],
-      "fetched_at_beijing": "2026-11-19 11:30:50",
-      "review_status": "excluded_after_image_review",
-      "review_note": "人工已检查图片，普通保养图，无周年依据，排除。"
+      "fetched_at_beijing": "2026-11-20 14:32:30",
+      "review_status": "excluded_after_image_review"
+    },
+    {
+      "id": "1750325965184633_1567553832081902",
+      "country": "Ethiopia",
+      "country_zh": "埃塞俄比亚",
+      "page_id": "1750325965184633",
+      "created_time_beijing": "2026-11-19 13:43",
+      "created_date_beijing": "2026-11-19",
+      "created_time_utc": "2026-11-19T05:43:06+0000",
+      "message": "#CarlcareService #trimarkrepairandmarketingservice #Tecno #itelmobile #infinix",
+      "story": "",
+      "summary_zh": "埃塞俄比亚｜短配文图片帖。已检查图片：手机防护保养提示图（How to protect your phone from damage），未见13周年依据，排除。",
+      "url": "https://www.facebook.com/1558983712938914/posts/1567553832081902",
+      "status_type": "added_photos",
+      "media_type": "photo",
+      "is_video": false,
+      "is_shared_post": false,
+      "images": [
+        "https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-6/911908443_1567553732081912_2517142845055202029_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=hkWMdYrQL3MQ7kNvwGV4xkH&_nc_oc=AdpinKzLJgY0NTRH4dcc7uxULbGDLinxeTIDAluoNUWwx7RIu2esuzGLJ1uSBE31GwYSSH9xtopUiI1tSF6nnb1E&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AKIiGfEEAAAA&_nc_gid=Gq7xjueARHnVxOPMxmfUBQ&_nc_tpa=Q5bMBQI6UfCArXvudLEtm6sMSP78SjmS248GAaJRSv3wrE6vsIFKjWQFh5H8BAr_gwIfhZRNLaVfGL_PlQ&oh=00_AQQO2wDphK0dYxKtS9lDxsYD8z3FtbWsPbV4qLvN6gDykw&oe=6B05AF97"
+      ],
+      "local_images": [
+        "1750325965184633_1567553832081902_1.jpg"
+      ],
+      "reactions": 2,
+      "comments": 1,
+      "shares": 1,
+      "engagement": 4,
+      "views": 250,
+      "views_error": null,
+      "category": "其他",
+      "category_detail": "已排除（图片人审）",
+      "day_num": null,
+      "confidence": "excluded",
+      "evidence": [
+        "short_caption_image_new",
+        "human_image_review_2026-11-20: no anniversary; excluded"
+      ],
+      "tags": [],
+      "fetched_at_beijing": "2026-11-20 14:32:28",
+      "review_status": "excluded_after_image_review"
+    },
+    {
+      "id": "1750325965184633_1567898712047414",
+      "country": "Ethiopia",
+      "country_zh": "埃塞俄比亚",
+      "page_id": "1750325965184633",
+      "created_time_beijing": "2026-11-19 21:31",
+      "created_date_beijing": "2026-11-19",
+      "created_time_utc": "2026-11-19T13:31:09+0000",
+      "message": "#CarlcareService #trimarkrepairandmarketingservice #Tecno #itelmobile #infinix",
+      "story": "",
+      "summary_zh": "埃塞俄比亚｜短配文图片帖。已检查图片：维修服务宣传图（技师修机），未见13周年依据，排除。",
+      "url": "https://www.facebook.com/1558983712938914/posts/1567898712047414",
+      "status_type": "added_photos",
+      "media_type": "photo",
+      "is_video": false,
+      "is_shared_post": false,
+      "images": [
+        "https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-6/911553048_1567898535380765_8604014142043389529_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=LfnIcgFEv0cQ7kNvwF5w0iW&_nc_oc=AdpSVBz420Z6OA7pneg61PhcSgJL2Cnl5kCDKOntc9K_KNAQNx91rwLAOroPDY277ggltNBCfKEM5jIpnj1nXGDu&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&edm=AKIiGfEEAAAA&_nc_gid=Gq7xjueARHnVxOPMxmfUBQ&_nc_tpa=Q5bMBQJ6kheZiy9XrAsym_0dxLWbFAz33_jyb4Ad2-sfNI8mGmnH4RCP3ctQEeSbtf6tis8H0V0ZkMHBew&oh=00_AQQySCjnkFTtpwPmzoIyu5HXhcjgL4VUAb-B46ektc9uJQ&oe=6B05B58F"
+      ],
+      "local_images": [
+        "1750325965184633_1567898712047414_1.jpg"
+      ],
+      "reactions": 3,
+      "comments": 0,
+      "shares": 1,
+      "engagement": 4,
+      "views": 217,
+      "views_error": null,
+      "category": "其他",
+      "category_detail": "已排除（图片人审）",
+      "day_num": null,
+      "confidence": "excluded",
+      "evidence": [
+        "short_caption_image_new",
+        "human_image_review_2026-11-20: no anniversary; excluded"
+      ],
+      "tags": [],
+      "fetched_at_beijing": "2026-11-20 14:32:30",
+      "review_status": "excluded_after_image_review"
     }
   ],
-  "review_updated_at_beijing": "2026-11-19 11:32:14"
+  "review_updated_at_beijing": "2026-11-20 14:31:30"
 }
