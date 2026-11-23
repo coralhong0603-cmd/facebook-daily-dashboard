@@ -81,6 +81,18 @@
     tr:hover td { background: #f8fbff; }
     .rank { color: var(--muted); width: 46px; }
     .account { font-weight: 650; color: var(--ink); }
+    .account a {
+      color: var(--blue);
+      font-weight: 650;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .account a:hover { color: var(--ink); }
+    .account a:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
     .badge { display: inline-block; padding: 2px 7px; border-radius: 999px; font-size: 12px; }
     .badge.good { background: var(--soft-green); color: var(--green); }
     .badge.warn { background: var(--soft-amber); color: var(--amber); }
@@ -243,7 +255,9 @@
         "所选日报内趋势，截止 " + (report.trend.at(-1)?.date || "-") + " / Trend within selected report through " + (report.trend.at(-1)?.date || "-");
       document.getElementById("tableHint").textContent =
         "当前表格指标日期 " + (report.latestMetricDate || "-") + "，覆盖 " + coverage + " 个主页；最新全量日 " + completeText +
-        " / Table metric date " + (report.latestMetricDate || "-") + ", coverage " + coverage + " pages; latest complete date " + completeText;
+        "。点击账号名在新标签页打开对应 Facebook 主页" +
+        " / Table metric date " + (report.latestMetricDate || "-") + ", coverage " + coverage + " pages; latest complete date " + completeText +
+        ". Click an account name to open its Facebook Page in a new tab.";
       document.getElementById("metaStrip").innerHTML = [
         ["日报文件 / Report File", report.file],
         ["日报日期 / Report Date", report.reportDate],
@@ -280,7 +294,7 @@
       document.getElementById("accountRows").innerHTML = report.accounts.map((account, index) => `
         <tr>
           <td class="rank">${index + 1}</td>
-          <td class="account">${escapeHtml(account.account)}</td>
+          <td class="account">${accountHomeLink(account)}</td>
           <td>${fmt.format(account.views)}</td>
           <td><span class="badge ${badgeClass(account.viewsChange)}">${pct(account.viewsChange)}</span></td>
           <td>${fmt.format(account.follows)}</td>
@@ -289,6 +303,39 @@
           <td>${account.followsPer10kViews.toFixed(1)}</td>
           <td>${account.viewsPerFollower.toFixed(1)}</td>
         </tr>`).join("");
+    }
+
+    function accountHomeLink(account) {
+      const label = escapeHtml(account.account);
+      const url = facebookPageHomeUrl(account);
+      if (!url) return label;
+      return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" title="打开 Facebook 主页 / Open Facebook Page">${label}</a>`;
+    }
+
+    function facebookPageHomeUrl(account) {
+      const fromUrl = canonicalFacebookPageHome(account && account.pageUrl);
+      if (fromUrl) return fromUrl;
+      const pageId = String(account && account.pageId || "").trim();
+      if (/^\d+$/.test(pageId)) return "https://www.facebook.com/" + pageId;
+      return "";
+    }
+
+    function canonicalFacebookPageHome(value) {
+      let parsed;
+      try {
+        parsed = new URL(String(value || "").trim());
+      } catch (error) {
+        return "";
+      }
+      const host = parsed.hostname.toLowerCase();
+      if (parsed.protocol !== "https:" || (host !== "www.facebook.com" && host !== "facebook.com" && host !== "m.facebook.com")) return "";
+      if (parsed.search || parsed.hash) return "";
+      const path = parsed.pathname.replace(/\/+$/, "");
+      if (!/^\/(?:[A-Za-z0-9.]+|\d+)$/.test(path)) return "";
+      const segment = path.slice(1).toLowerCase();
+      const blocked = new Set(["login", "login.php", "sharer", "share.php", "dialog", "plugins", "watch", "reel", "stories", "posts", "photo", "photos", "videos", "permalink.php", "profile.php"]);
+      if (blocked.has(segment)) return "";
+      return "https://www.facebook.com" + path;
     }
 
     function badgeClass(value) {
