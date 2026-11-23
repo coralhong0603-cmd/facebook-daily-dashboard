@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Facebook 每日发帖看板 · 2026-11-22</title>
+  <style>
+
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --text: #152033;
+      --muted: #667085;
+      --line: #d8dee8;
+      --blue: #1f5eff;
+      --green: #15803d;
+      --amber: #b7791f;
+      --red: #b42318;
+      --ink: #0f172a;
+      --soft-blue: #edf3ff;
+      --soft-green: #eaf7ef;
+      --soft-amber: #fff7e6;
+      --soft-red: #fff1f0;
+      --shadow: 0 12px 30px rgba(15, 23, 42, .07);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    .shell { max-width: 1480px; margin: 0 auto; padding: 28px 28px 48px; }
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 20px;
+    }
+    h1 { margin: 0; font-size: 28px; line-height: 1.15; letter-spacing: 0; }
+    .subtitle { margin-top: 8px; color: var(--muted); }
+    .nav-links { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .controls { display: flex; gap: 10px; align-items: center; justify-content: flex-end; flex-wrap: wrap; }
+    select, button, .btn {
+      height: 36px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      border-radius: 7px;
+      padding: 0 12px;
+      font: inherit;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    button.active, .btn.active { border-color: var(--blue); color: var(--blue); background: var(--soft-blue); font-weight: 650; }
+    .grid { display: grid; gap: 16px; }
+    .kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 16px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+    .kpi { padding: 16px; min-height: 112px; }
+    .label { color: var(--muted); font-size: 13px; }
+    .value { margin-top: 10px; font-size: 30px; line-height: 1; font-weight: 760; color: var(--ink); }
+    .value.risk { color: var(--red); }
+    .delta { margin-top: 10px; font-size: 13px; color: var(--muted); }
+    .panel { padding: 18px; }
+    .panel-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 12px; flex-wrap: wrap; }
+    h2 { margin: 0; font-size: 18px; letter-spacing: 0; }
+    .hint { color: var(--muted); font-size: 12px; }
+    .pill { padding: 5px 9px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--text); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .pill.on { border-color: var(--blue); color: var(--blue); background: var(--soft-blue); font-weight: 650; }
+    .pill.risk, .chip.risk {
+      background: var(--soft-red);
+      color: var(--red);
+      border-color: #f5c2c0;
+    }
+    .live { display: inline-block; padding: 2px 8px; border-radius: 999px; background: var(--soft-amber); color: var(--amber); font-size: 12px; font-weight: 650; margin-left: 8px; vertical-align: middle; }
+    .meta-strip { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 18px; color: var(--muted); }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; background: #fff; font-size: 13px; }
+    .silent-box { padding: 16px 18px; margin-bottom: 16px; }
+    .silent-box h2 { margin-bottom: 10px; }
+    .posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; align-items: start; }
+    .post-card { overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+    .post-head { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; padding: 12px 16px 10px; }
+    .post-images { position: relative; background: #eef2f7; display: grid; gap: 3px; }
+    .post-images.multi-2 { grid-template-columns: 1fr 1fr; }
+    .post-images.multi-3, .post-images.multi-n { grid-template-columns: 1fr 1fr; }
+    .post-images img { width: 100%; height: auto; display: block; background: #eef2f7; }
+    .post-images.multi-2 img, .post-images.multi-3 img, .post-images.multi-n img { height: 220px; object-fit: cover; }
+    .no-img { min-height: 72px; display: flex; align-items: center; justify-content: center; color: var(--muted); background: #f3f5f8; font-size: 13px; }
+    .video-badge {
+      position: absolute; left: 10px; top: 10px; z-index: 1;
+      background: rgba(15,23,42,.82); color: #fff; padding: 3px 8px;
+      border-radius: 999px; font-size: 12px; font-weight: 650; letter-spacing: .02em;
+    }
+    .post-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .post-top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
+    .page-name { font-weight: 650; color: var(--ink); }
+    .post-time { color: var(--muted); font-size: 13px; white-space: nowrap; }
+    .type-tag { display: inline-block; margin-left: 6px; padding: 1px 6px; border-radius: 999px; background: var(--soft-blue); color: var(--blue); font-size: 11px; font-weight: 650; }
+    .caption { white-space: pre-wrap; word-break: break-word; color: var(--text); line-height: 1.55; }
+    .caption.collapsed { max-height: 6.2em; overflow: hidden; position: relative; }
+    .caption.collapsed::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.8em;
+      background: linear-gradient(transparent, #fff);
+    }
+    .toggle { border: 0; background: none; color: var(--blue); padding: 0; height: auto; cursor: pointer; font: inherit; align-self: flex-start; }
+    .stats { display: flex; gap: 14px; color: var(--muted); font-size: 13px; flex-wrap: wrap; }
+    .stats b { color: var(--ink); font-weight: 650; }
+    .open-link { color: var(--blue); text-decoration: none; font-size: 13px; }
+    .open-link:hover { text-decoration: underline; }
+    .group-title { margin: 8px 0 4px; font-size: 16px; color: var(--ink); }
+    .footer { margin-top: 20px; color: var(--muted); font-size: 12px; }
+    a.back { color: var(--blue); text-decoration: none; font-weight: 650; }
+    a.back:hover { text-decoration: underline; }
+    @media (max-width: 1100px) {
+      header { grid-template-columns: 1fr; }
+      .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .controls { justify-content: flex-start; }
+    }
+    @media (max-width: 640px) {
+      .shell { padding: 18px 14px 32px; }
+      .kpis { grid-template-columns: 1fr; }
+      .value { font-size: 26px; }
+      .posts-grid { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div>
+        <h1>Facebook 每日发帖看板</h1>
+        <div class="subtitle">查看 27 个 Carlcare Service 主页在 2026-11-22（北京时间）发布的帖子与配图。</div>
+        <div class="nav-links">
+          <a class="back" href="../index.html">每日数据看板</a>
+        </div>
+      </div>
+      <div class="controls">
+        <span class="label">日期</span>
+        <a class="pill" href="2026-11-10.html">2026-11-10</a><a class="pill" href="2026-11-11.html">2026-11-11</a><a class="pill" href="2026-11-12.html">2026-11-12</a><a class="pill" href="2026-11-13.html">2026-11-13</a><a class="pill" href="2026-11-14.html">2026-11-14</a><a class="pill" href="2026-11-15.html">2026-11-15</a><a class="pill" href="2026-11-16.html">2026-11-16</a><a class="pill" href="2026-11-17.html">2026-11-17</a><a class="pill" href="2026-11-18.html">2026-11-18</a><a class="pill" href="2026-11-19.html">2026-11-19</a><a class="pill" href="2026-11-20.html">2026-11-20</a><a class="pill" href="2026-11-21.html">2026-11-21</a><a class="pill on" href="2026-11-22.html">2026-11-22</a><a class="pill" href="2026-11-23.html">2026-11-23 进行中</a><a class="pill" href="../posts.html">最新</a>
+      </div>
+    </header>
+
+    <div class="meta-strip">
+      <span class="pill">数据日期 2026-11-22</span>
+      <span class="pill">北京时间 UTC+8</span>
+      <span class="pill">共 27 个主页</span>
+    </div>
+
+    <section class="grid kpis">
+      <div class="card kpi">
+        <div class="label">发帖总数</div>
+        <div class="value">14</div>
+        <div class="delta">当天所有主页合计</div>
+      </div>
+      <div class="card kpi">
+        <div class="label">已发帖主页</div>
+        <div class="value">12 / 27</div>
+        <div class="delta">至少发布一条帖子</div>
+      </div>
+      <div class="card kpi">
+        <div class="label">未发帖主页</div>
+        <div class="value risk">15</div>
+        <div class="delta">当天没有任何帖子</div>
+      </div>
+      <div class="card kpi">
+        <div class="label">总互动</div>
+        <div class="value">1010</div>
+        <div class="delta">赞 + 评论 + 分享</div>
+      </div>
+    </section>
+    
+    <section class="card silent-box">
+      <div class="panel-head">
+        <h2>未发帖主页（15）</h2>
+        <span class="hint">这些主页在当天没有发布任何帖子</span>
+      </div>
+      <div class="chip-row"><span class="chip risk">Carlcare Service (IN)</span><span class="chip risk">Carlcare Service (CI, GN, SN)</span><span class="chip risk">Carlcare Service (GH)</span><span class="chip risk">Carlcare Service ET (ET)</span><span class="chip risk">Carlcare Service Morocco (MA)</span><span class="chip risk">Carlcare Service (UG)</span><span class="chip risk">Carlcare Service (PH)</span><span class="chip risk">Carlcare Service TZ (TZ)</span><span class="chip risk">Carlcare Service CM (CM)</span><span class="chip risk">Carlcare Service (ZM)</span><span class="chip risk">Carlcare Service TH (TH)</span><span class="chip risk">Carlcare Service (RW)</span><span class="chip risk">Carlcare Service (MY)</span><span class="chip risk">Carlcare Service Tunisia (TN)</span><span class="chip risk">Carlcare Service Zimbabwe</span></div>
+    </section>
+
+    <section class="card panel">
+      <div class="panel-head">
+        <h2>当天帖子</h2>
+        <div class="controls">
+          <button type="button" id="sortInteract" class="active">按互动排序</button>
+          <button type="button" id="sortGroup">按主页分组</button>
+          <span class="hint">点击卡片底部链接可打开 Facebook 原帖</span>
+        </div>
+      </div>
+      <div id="feed" class="posts-grid"></div>
+    </section>
+
+    <div class="footer">数据来自 Meta Graph API，按北京时间划分自然日。配图已转存到本站，避免 Facebook 原图链接过期。生成时间：2026-11-23 09:22 CST</div>
+  </div>
+  <script>
+    const DATA = {"day": "2026-11-22", "imgBase": "img/2026-11-22/", "posts": [{"id": "315435088526192_1173035645069783", "time": "15:00", "created_time": "2026-11-22 15:00", "type": "added_photos", "is_video": false, "msg": "Yesterday’s 5 differences: 1. White mug ➡️ Black flask, 2. 3 stacked books ➡️ 2 books (\"Repair\" book missing), 3. Blue cloth removed, 4. Screwdriver tip changed from blue to green, 5. Screws in tray increased! Shoutout to everyone with eagle eyes! 🎉👀   \n\nWelcome to Day 6 of the Carlcare 13th Anniversary: Unlock 13! Help Carl understand your phone—which message describes the problem most clearly?   \n\n🔍 How to play:\n1️⃣ Read options A, B, and C carefully\n2️⃣ Pick the clearest description of what happens, when it started, and when it occurs\n3️⃣ Drop A, B, or C in the comments below! 👇📱 \n\n  #Carlcare13thAnniversary", "url": "https://www.facebook.com/1161921822847832/posts/1173035645069783", "reactions": 21, "comments": 23, "shares": 2, "attachments": [{"type": "photo", "title": ""}], "local_images": ["315435088526192_1173035645069783_1.jpg"], "image_count": 1, "country": "Global", "page_name": "Carlcare Service (Default)", "interactions": 46}, {"id": "1275634795887129_1559787882862101", "time": "22:49", "created_time": "2026-11-22 22:49", "type": "added_photos", "is_video": false, "msg": "بمناسبة الذكرى السنوية الـ13 لكارلكير، \nقررنا نختبر قوة ملاحظتك! 💙💚\nفي 9 مربعات، فيه رقم 13 مستخبي وسط التفاصيل.. تقدر تكتشف مكانه؟ 🔍\nركّز في الصورة، واكتب حرف المربع اللي لقيت فيه الرقم في التعليقات 🏆\nيلا ورّونا مين صاحب أقوى ملاحظة! 👇\n\nCarlcare 13th Anniversary\nWhere Care Goes Further 💙", "url": "https://www.facebook.com/1547944887379734/posts/1559787882862101", "reactions": 11, "comments": 9, "shares": 2, "attachments": [{"type": "photo", "title": ""}], "local_images": ["1275634795887129_1559787882862101_1.jpg"], "image_count": 1, "country": "Egypt", "page_name": "Carlcare Service (EG)", "interactions": 22}, {"id": "1094142560678778_1482799390617639", "time": "15:09", "created_time": "2026-11-22 15:09", "type": "added_photos", "is_video": false, "msg": "গতকালের ৫টি পার্থক্য ছিল:\n\n1. সাদা মগ ➡️ কালো ফ্লাস্ক\n2. ৩টি বই সাজানো ছিল ➡️ ২টি বই (Repair বইটি নেই)\n3. নীল কাপড়টি সরানো হয়েছে\n4. স্ক্রু ড্রাইভারের মাথার রং নীল থেকে সবুজ হয়েছে\n5. ট্রেতে স্ক্রুর সংখ্যা বেড়েছে!\n\nযারা ঈগলের মতো তীক্ষ্ণ চোখে সব পার্থক্য খুঁজে পেয়েছেন, তাদের জন্য রইল বিশেষ অভিনন্দন! \n\nCarl Care-এর ১৩তম বর্ষপূর্তি: Unlock 13-এর Day 6-এ স্বাগতম! এবার Carl-কে আপনার ফোনের সমস্যা বুঝতে সাহায্য করুন। কোন বর্ণনাটি ফোনের সমস্যাকে সবচেয়ে স্পষ্টভাবে তুলে ধরে? \n\n🔍 খেলার নিয়ম:\n\n1️⃣ A, B ও C অপশনগুলো মনোযোগ দিয়ে পড়ুন।\n\n2️⃣ কোন অপশনে সমস্যাটি কী, কখন থেকে শুরু হয়েছে এবং কখন ঘটে, তা সবচেয়ে স্পষ্টভাবে বলা হয়েছে, সেটি বেছে নিন।\n\n3️⃣ আপনার সঠিক উত্তরটি A, B অথবা C কমেন্টে লিখে দিন! \n\n#CarlCare13thAnniversary", "url": "https://www.facebook.com/1471820801715498/posts/1482799390617639", "reactions": 101, "comments": 93, "shares": 41, "attachments": [{"type": "photo", "title": ""}], "local_images": ["1094142560678778_1482799390617639_1.jpg"], "image_count": 1, "country": "Bangladesh", "page_name": "Carlcare Service BD (BD)", "interactions": 235}, {"id": "1094142560678778_1482911220606456", "time": "17:49", "created_time": "2026-11-22 17:49", "type": "added_photos", "is_video": false, "msg": "Predict & Win Gift ক্যাম্পেইনের বিজয়ীদের অভিনন্দন! \n\nTECNO | SAFF Championship Bangladesh 2026-এর প্রতিটি ম্যাচে যারা সঠিক প্রেডিকশন করেছেন, তাদের মধ্য থেকে লটারির মাধ্যমে নির্বাচিত সৌভাগ্যবান বিজয়ীদের তালিকা প্রকাশ করা হয়েছে!\n\nআমাদের সকল বিজয়ীকে জানাই আন্তরিক অভিনন্দন! আপনাদের অংশগ্রহণ ও ভালোবাসায় ক্যাম্পেইনটি আরও আনন্দময় হয়ে উঠেছে।\n\n📩 বিজয়ীদের জন্য জরুরি নির্দেশনা:\nপ্রত্যেক বিজয়ীকে এই পোস্ট প্রকাশের ৩ দিনের মধ্যে Carlcare Facebook পেজের ইনবক্সে নিজের যোগাযোগের তথ্য (Contact Information) পাঠাতে হবে। নির্ধারিত সময়ের মধ্যে যোগাযোগ না করলে বিজয়ীর পুরস্কার বাতিল বলে গণ্য হবে।", "url": "https://www.facebook.com/1471820801715498/posts/1482911220606456", "reactions": 65, "comments": 17, "shares": 1, "attachments": [{"type": "photo", "title": ""}], "local_images": ["1094142560678778_1482911220606456_1.jpg"], "image_count": 1, "country": "Bangladesh", "page_name": "Carlcare Service BD (BD)", "interactions": 83}, {"id": "1278473725499087_1571894164971828", "time": "15:16", "created_time": "2026-11-22 15:16", "type": "added_photos", "is_video": false, "msg": "🎉 DAY 03/13 – THE RIGHT PATH IS REVEALED!\n\nDid you find your way to Carlcare? 🧩\n\nThe correct answer is A! 💙\n\nCongratulations to everyone who found the right path!\n\nStay tuned for Day 4 Challenge!\n\n#Carlcare13thAnniversary #Day3Challenge #AnswerRevealed #13YearsOfCare #CarlcarePakistan", "url": "https://www.facebook.com/1560031746158070/posts/1571894164971828", "reactions": 5, "comments": 0, "shares": 0, "attachments": [{"type": "photo", "title": ""}], "local_images": ["1278473725499087_1571894164971828_1.jpg"], "image_count": 1, "country": "Pakistan", "page_name": "Carlcare Service PK (PK)", "interactions": 5}, {"id": "1545386218866099_1602141538614594", "time": "15:12", "created_time": "2026-11-22 15:12", "type": "added_photos", "is_video": false, "msg": "Your phone isn’t charging, and you’re about to tell customer service. Which message helps them most? 👀\n\nA, B or C? Drop your answer below. 👇\n\nTip: a good description covers what happened, when it started, and under what conditions. It gets you faster help at any Carlcare service center.\n\n#Unlock13 #CarlcareAnniversary #WhereCareGoesFurther", "url": "https://www.facebook.com/1589959693166112/posts/1602141538614594", "reactions": 19, "comments": 18, "shares": 1, "attachments": [{"type": "photo", "title": ""}], "local_images": ["1545386218866099_1602141538614594_1.jpg"], "image_count": 1, "country": "Kenya", "page_name": "Carlcare Service (KE)", "interactions": 38}, {"id": "113134406822567_1599662942180055", "time": "11:00", "created_time": "2026-11-22 11:00", "type": "added_photos", "is_video": false, "msg": "🎉 13 DAYS OF CARE - DAY 2\nPunya rencana servis HP? Atur jadwalnya dulu lewat reservasi online Carlcare! 📅📱\n\nLebih praktis untuk merencanakan kunjungan ke service center, tanpa perlu bingung menentukan waktu dari awal saat datang.\n\nSiapkan jadwal servis sesuai kebutuhanmu dan kunjungi Carlcare Service Center resmi.\n\n#Carlcare #CarlcareIndonesia #ReservasiOnline", "url": "https://www.facebook.com/1588082993338050/posts/1599662942180055", "reactions": 12, "comments": 1, "shares": 0, "attachments": [{"type": "photo", "title": ""}], "local_images": ["113134406822567_1599662942180055_1.jpg"], "image_count": 1, "country": "Indonesia", "page_name": "Carlcare Service ID (ID)", "interactions": 13}, {"id": "1377842085588075_1458816026430709", "time": "16:30", "created_time": "2026-11-22 16:30", "type": "added_photos", "is_video": false, "msg": "🔥 Two of English football’s biggest clubs. One massive battle.\n\nLiverpool come into this one off a win, while United will be looking to bounce back after their draw. 👀⚽\n\nWho takes the bragging rights? Predict the scoreline and drop it in the comments! 👇🏽🏆\n\n#MatchDay #ScorePrediction #Football #LIVMUN #PredictAndWin", "url": "https://www.facebook.com/1447487657563546/posts/1458816026430709", "reactions": 230, "comments": 228, "shares": 31, "attachments": [{"type": "photo", "title": ""}], "local_images": ["1377842085588075_1458816026430709_1.jpg"], "image_count": 1, "country": "Nigeria", "page_name": "Carlcare Service NG (NG)", "interactions": 489}, {"id": "1377842085588075_1458857003093278", "time": "17:30", "created_time": "2026-11-22 17:30", "type": "added_photos", "is_video": false, "msg": "🤔 Your phone has a problem… but can you explain it properly? 😂📱\n\nDay 6 of the #Carlcare13thAnniversary Unlock 13 Challenge is here!\n\nWhich message would help Carl understand the problem best? A, B or C? 👀\n\nThink you know the right answer? Drop your choice in the comments! 👇🏽\n\nCare is in the details. 💙\n\n#Carlcare13thAnniversary #Unlock13 #WhereCareGoesFurther", "url": "https://www.facebook.com/1447487657563546/posts/1458857003093278", "reactions": 31, "comments": 27, "shares": 1, "attachments": [{"type": "photo", "title": ""}], "local_images": ["1377842085588075_1458857003093278_1.jpg"], "image_count": 1, "country": "Nigeria", "page_name": "Carlcare Service NG (NG)", "interactions": 59}, {"id": "107749214080444_1462249219352162", "time": "16:33", "created_time": "2026-11-22 16:33", "type": "added_photos", "is_video": false, "msg": "يوم الخدمة رجع من جديد😍\n\nنهار الثلاثاء والأربعاء 24 و25 نوفمبر، استافدوا من عروض Carlcare الخاصة! 📱✨\n\n🛠️ تخفيض 50% على أجور اليد العاملة\n🔄 تحديث النظام مجاناً\n✨ تنظيف الهاتف مجاناً\n\nما تفوتوش الفرصة! زوروا أقرب مركز Carlcare واستافدوا من خدماتنا. 💚\n\n📅 24 و25 نوفمبر", "url": "https://www.facebook.com/1459028113007606/posts/1462249219352162", "reactions": 6, "comments": 3, "shares": 0, "attachments": [{"type": "photo", "title": ""}], "local_images": ["107749214080444_1462249219352162_1.jpg"], "image_count": 1, "country": "Algeria", "page_name": "Carlcare Service DZ (DZ)", "interactions": 9}, {"id": "176984945505335_122275946780153106", "time": "09:30", "created_time": "2026-11-22 09:30", "type": "added_photos", "is_video": false, "msg": "🎊Carlcare Service တန်ဆောင်တိုင်ရုံးပိတ်ရက်အသိပေးကြေညာချက် \n\nမြန်မာတစ်နိုင်ငံလုံးရှိ Service Center များအားလုံးကို တန်ဆောင်တိုင် ရုံးပိတ်ရက်အဖြစ် နိုဝင်ဘာလ (၂၃) ရက် နှင့် (၂၄) ရက် တို့တွင် ပိတ်ထားမည် ဖြစ်ပါသည်။ \n\n🗓️နိုဝင်ဘာလ (၂၅) ရက်နေ့ တွင် Service Center များအားလုံးကို ပုံမှန်အတိုင်း ပြန်လည်ဖွင့်လှစ်ပေးသွားမည် ဖြစ်ပါကြောင်း လေးစားစွာ အသိပေးအပ်ပါသည်။ \n\n🤗 ပျော်ရွှင်ချမ်းမြေ့ဖွယ် တန်ဆောင်တိုင် အခါသမယ ဖြစ်ပါစေ...\n\n#CarlcareServiceCenter #TECNOMobile #itelmobile #Infinixmobile #TazaungdaingHoliday #တန်ဆောင်တိုင် #ရုံးပိတ်ရက်", "url": "https://www.facebook.com/122274759230153106/posts/122275946780153106", "reactions": 1, "comments": 0, "shares": 1, "attachments": [{"type": "photo", "title": ""}], "local_images": ["176984945505335_122275946780153106_1.jpg"], "image_count": 1, "country": "Myanmar", "page_name": "Carlcare Service (MM)", "interactions": 2}, {"id": "267888669748614_122244047624283811", "time": "08:00", "created_time": "2026-11-22 08:00", "type": "added_photos", "is_video": false, "msg": "👀 ¡Hoy necesitamos tus ojos de detective!\n\nEl Día 5 de Unlock 13 trae un nuevo reto: dos imágenes de nuestra mesa de reparación parecen iguales, pero esconden 5 diferencias. 🔧📱\n\nObserva cada detalle y descubre qué objetos o posiciones han cambiado.\n\n¡No necesitas conocimientos técnicos! Solo comenta las 5 diferencias que encuentres. 👇\n\n#Carlcare13thAnniversary #Unlock13 #Carlcare", "url": "https://www.facebook.com/122242851860283811/posts/122244047624283811", "reactions": 0, "comments": 0, "shares": 0, "attachments": [{"type": "photo", "title": ""}], "local_images": ["267888669748614_122244047624283811_1.jpg"], "image_count": 1, "country": "Ecuador", "page_name": "Carlcare Service (EC)", "interactions": 0}, {"id": "373708282498334_122212320950463313", "time": "08:00", "created_time": "2026-11-22 08:00", "type": "added_photos", "is_video": false, "msg": "🎯 ¡Un desafío para los más observadores!\n\nEn el Día 5 de Unlock 13, te presentamos dos escenas de nuestra mesa de reparación. A simple vista parecen idénticas, pero hay 5 detalles diferentes. 👀\n\n¿Podrás encontrarlos todos? Identifica los objetos o las posiciones que cambiaron y compártelos en los comentarios.\n\n¡Que comience la búsqueda! 🚀\n\n#Carlcare13 #Unlock13Challenge #Carlcare", "url": "https://www.facebook.com/122211242474463313/posts/122212320950463313", "reactions": 5, "comments": 4, "shares": 0, "attachments": [{"type": "photo", "title": ""}], "local_images": ["373708282498334_122212320950463313_1.jpg"], "image_count": 1, "country": "Bolivia", "page_name": "Carlcare Service Bolivia", "interactions": 9}, {"id": "228938917580846_1487867300115511", "time": "08:00", "created_time": "2026-11-22 08:00", "type": "added_photos", "is_video": false, "msg": "🔎 ¿Puedes encontrar lo que ha cambiado?\n\n¡Es momento de poner a prueba tu atención al detalle con el Día 5 de Unlock 13! 🎉\n\nTenemos dos ilustraciones de una mesa de reparación y hay 5 diferencias escondidas entre ellas. 🛠️\n\nMira con atención, encuentra cada cambio y cuéntanos en los comentarios qué descubriste. ¡Es más fácil de lo que parece! 😉\n\n#CarlcareAnniversary #Unlock13 #Carlcare", "url": "https://www.facebook.com/1483960757172832/posts/1487867300115511", "reactions": 0, "comments": 0, "shares": 0, "attachments": [{"type": "photo", "title": ""}], "local_images": ["228938917580846_1487867300115511_1.jpg"], "image_count": 1, "country": "Colombia", "page_name": "Carlcare Service CO", "interactions": 0}]};
+    const CAPTION_LIMIT = 160;
+    const feed = document.getElementById('feed');
+    let mode = 'interact';
+
+    document.getElementById('sortInteract').addEventListener('click', () => setMode('interact'));
+    document.getElementById('sortGroup').addEventListener('click', () => setMode('group'));
+
+    function setMode(m) {
+      mode = m;
+      document.getElementById('sortInteract').classList.toggle('active', m === 'interact');
+      document.getElementById('sortGroup').classList.toggle('active', m === 'group');
+      render();
+    }
+
+    function esc(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function typeLabel(t, isVideo) {
+      if (isVideo) return '视频';
+      const map = {added_photos:'图片', added_video:'视频', mobile_status_update:'动态', shared_story:'分享', created_event:'活动'};
+      return map[t] || t || '帖子';
+    }
+
+    function captionBlock(msg) {
+      const text = msg || '（无文字）';
+      const long = text.length > CAPTION_LIMIT || (text.match(/\n/g) || []).length >= 4;
+      const cls = long ? 'caption collapsed' : 'caption';
+      const btn = long ? '<button type="button" class="toggle" data-toggle="1">展开全文</button>' : '';
+      return `<div class="${cls}">${esc(text)}</div>${btn}`;
+    }
+
+    function imageBlock(p) {
+      const imgs = p.local_images || [];
+      const badge = p.is_video ? '<span class="video-badge">视频</span>' : '';
+      if (!imgs.length) {
+        return `<div class="post-images">${badge}<div class="no-img">${p.is_video ? '视频封面未能加载' : (p.image_count ? '图片未能加载' : '无配图')}</div></div>`;
+      }
+      const n = imgs.length;
+      const layout = n === 1 ? 'single' : (n === 2 ? 'multi-2' : (n === 3 ? 'multi-3' : 'multi-n'));
+      const tags = imgs.map(fn => `<img src="${esc(DATA.imgBase + fn)}" alt="" loading="lazy">`).join('');
+      return `<div class="post-images ${layout}">${badge}${tags}</div>`;
+    }
+
+    function card(p) {
+      const inter = (p.reactions||0) + (p.comments||0) + (p.shares||0);
+      const link = p.url ? `<a class="open-link" href="${esc(p.url)}" target="_blank" rel="noopener">打开原帖</a>` : '';
+      return `<article class="card post-card">
+        <div class="post-head">
+          <div class="page-name">${esc(p.page_name)}<span class="type-tag">${esc(typeLabel(p.type, p.is_video))}</span></div>
+          <div class="post-time">${esc(p.time)}</div>
+        </div>
+        ${imageBlock(p)}
+        <div class="post-body">
+          ${captionBlock(p.msg)}
+          <div class="stats">
+            <span>赞 <b>${p.reactions||0}</b></span>
+            <span>评论 <b>${p.comments||0}</b></span>
+            <span>分享 <b>${p.shares||0}</b></span>
+            <span>互动 <b>${inter}</b></span>
+            ${link}
+          </div>
+        </div>
+      </article>`;
+    }
+
+    function render() {
+      const posts = DATA.posts.slice();
+      if (mode === 'interact') {
+        posts.sort((a,b) => (b.interactions - a.interactions) || String(a.time).localeCompare(String(b.time)));
+        feed.className = 'posts-grid';
+        feed.innerHTML = posts.length ? posts.map(card).join('') : '<div class="hint">这一天没有任何帖子。</div>';
+      } else {
+        const groups = [];
+        const map = new Map();
+        for (const p of posts) {
+          if (!map.has(p.country)) { map.set(p.country, []); groups.push(p.country); }
+          map.get(p.country).push(p);
+        }
+        feed.className = '';
+        feed.innerHTML = groups.map(c => {
+          const list = map.get(c);
+          const name = list[0].page_name;
+          return `<h3 class="group-title">${esc(name)}（${list.length}）</h3><div class="posts-grid">${list.map(card).join('')}</div>`;
+        }).join('') || '<div class="hint">这一天没有任何帖子。</div>';
+      }
+      feed.querySelectorAll('[data-toggle]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const cap = btn.previousElementSibling;
+          const open = cap.classList.toggle('collapsed') === false;
+          // classList.toggle returns new state of the class; we want the opposite wording
+          const collapsed = cap.classList.contains('collapsed');
+          btn.textContent = collapsed ? '展开全文' : '收起';
+        });
+      });
+    }
+    render();
+  </script>
+</body>
+</html>
